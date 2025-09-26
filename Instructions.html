@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Midterm 1: Mini</title>
+		<title>Practice 1: Mini</title>
 		<style>
             body {
                 font-size: 1.5em ;
@@ -79,7 +79,7 @@
                         <a id="hide1" href="#hide1" class="hide"><h3>A. Starting Template [Show]</h3></a>
                         <a id="show1" href="#show1" class="show"><h3>A. Starting Template [Hide]</h3></a>
                         <div class="details">
-                            <p>This midterm is composed of 5 milestones, each roughly equivalent to a question on a practice midterm. Each of the problems works together to create one, single, more expansive assignment. Before getting the milestones, there are a few introductory remarks.
+                            <p>This midterm is composed of 3 milestones, each roughly equivalent to two questions on a practice midterm. Each of the problems works together to create one, single, more expansive assignment. Before getting the milestones, there are a few introductory remarks.
                             <p>Additionally, this project will involve working with <code>WordleGraphics.py</code>. You should already be familiar from Project 1: Wordle. For your reference, this project specification will specify how to interact with this file, but you may also consult your code from Project 1: Wordle.
                             <hr>
                             <h2>Files:</h2>
@@ -140,7 +140,7 @@ gw.add_enter_listener(enter_action)</code></pre><hr>
                                 <li>If the guessed "row" word is valid, yet one or more column does not contain a valid prefix, columns that do not contain valid prefixes are colored in <code>PRESENT_COLOR</code>. The current row, that is, where text goes when typing, is not updated and the player may use <code>BACKSPACE</code>/<code>DELETE</code> to try other words.
                                 <li>If the guessed "row" word is not in the word list, color the "row" word in <code>MISSING_COLOR</code>. Again, the current row is not updated.
                             </ul>
-                            <p>For example, suppose the inital guessed "row" is <code>AEGIS</code>, the next row is <code>POUTY</code>, and in the current row the guess is <code>ENDER</code>. All these guesses are valid words, but there are no words in the set of valid words that are six letters long and begin with "GUD", so the middle column, well not yet wrong, presents any future possible solution so is colored "PRESENT_COLOR" rather than "CORRECT_COLOR".
+                            <p>For example, suppose the inital guessed "row" is <code>AEGIS</code>, the next row is <code>POUTY</code>, and in the current row the guess is <code>ENDER</code>. All these guesses are valid words, but there are no words in the set of valid words that are six letters long and begin with "GUD", so the middle column, while not yet "wrong", presents any future possible solution so is colored "PRESENT_COLOR" rather than "CORRECT_COLOR".
                             <center>
                                 <table style="text-align:center;font-family:sans-serif">
                                     <tr>
@@ -163,49 +163,26 @@ gw.add_enter_listener(enter_action)</code></pre><hr>
                                     </tr>
                                 </table>
                             </center>
-                            <p>Since this guess is not accepted, the current row does not change. We can use BACKSPACE or DELETE to remove the word, and guess "ANTER", which is not a valid word, so is colored in "MISSING_COLOR" while all other colors remain the same:</p>
+                            <p>Since this guess is not accepted, the current row does not change. We can use BACKSPACE or DELETE to remove the word, and guess "ANTER", which is not a valid word, so is colored in "MISSING_COLOR" while all other colors optionally remain the same: (left) or are reset (right). Either of the following are permitted.</p>
                                                         <center>
                                 <table style="text-align:center;font-family:sans-serif">
                                     <tr>
-                                        <td class="c">A</td><td class="c">E</td><td class="p">G</td><td class="c">I</td><td class="c">S</td>
+                                        <td class="c">A</td><td class="c">E</td><td class="p">G</td><td class="c">I</td><td class="c">S</td><td style="border:none"></td><td class="c">A</td><td class="c">E</td><td class="c">G</td><td class="c">I</td><td class="c">S</td>
                                     </tr>
                                     <tr>
-                                        <td class="c">P</td><td class="c">O</td><td class="p">U</td><td class="c">T</td><td class="c">Y</td>
+                                        <td class="c">P</td><td class="c">O</td><td class="p">U</td><td class="c">T</td><td class="c">Y</td><td style="border:none"></td><td class="c">P</td><td class="c">O</td><td class="c">U</td><td class="c">T</td><td class="c">Y</td>
                                     </tr>
                                     <tr>
-                                        <td class="m">A</td><td class="m">N</td><td class="m">T</td><td class="m">E</td><td class="m">R</td>
+                                        <td class="m">A</td><td class="m">N</td><td class="m">T</td><td class="m">E</td><td class="m">R</td><td style="border:none"></td><td class="m">A</td><td class="m">N</td><td class="m">T</td><td class="m">E</td><td class="m">R</td>
                                     </tr>
                                     <tr>
-                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td>
+                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td><td style="border:none"></td><td class="u"> </td><td class="u"> </td><td class="u"> </td><td class="u"> </td><td class="u"> </td>
                                     </tr>
                                     <tr>
-                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td>
+                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td><td style="border:none"></td><td class="u"> </td><td class="u"> </td><td class="u"> </td><td class="u"> </td><td class="u"> </td>
                                     </tr>
                                     <tr>
-                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td>
-                                    </tr>
-                                </table>
-                            </center>
-                            <p>Since this guess is not accepted, the current row does not change. We can use BACKSPACE or DELETE to remove the word, and guess "ANTER", which is not a valid word, so is colored in "MISSING_COLOR" while all other colors remain the same:</p>
-                                                        <center>
-                                <table style="text-align:center;font-family:sans-serif">
-                                    <tr>
-                                        <td class="c">A</td><td class="c">E</td><td class="p">G</td><td class="c">I</td><td class="c">S</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="c">P</td><td class="c">O</td><td class="p">U</td><td class="c">T</td><td class="c">Y</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="m">A</td><td class="m">N</td><td class="m">T</td><td class="m">E</td><td class="m">R</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td>
+                                        <td class="u"> </td><td class="u"> </td><td class="p"> </td><td class="u"> </td><td class="u"> </td><td style="border:none"></td><td class="u"> </td><td class="u"> </td><td class="u"> </td><td class="u"> </td><td class="u"> </td>
                                     </tr>
                                 </table>
                             </center>
@@ -300,21 +277,7 @@ gw.add_enter_listener(enter_action)</code></pre><hr>
                         <a id="hideE" href="#hideE" class="hide"><h3>D. Hint: Capitalization [Show]</h3></a>
                         <a id="showE" href="#showE" class="show"><h3>D. Hint: Capitalization [Hide]</h3></a>
                         <div class="details">
-                            <p> Be advised, words from <code>ENGLISH_WORDS</code> are all (ironically) lower-case and all displayed letters in Wordle are capitalized (upper-case). You don't need to work with ENGLISH_WORDS yet but I recommend doing something like the following:
-                            <hr><pre style="font-size:larger"><code ># to see if a word is in ENGLISH_WORDS, make it lower case.
-guess_str = "Hello"
-guess_low = guess_str.lower()
-guess_cap = guess_str.upper()
-print(guess_str, guess_str in FIVES) # Hello False
-print(guess_low, guess_low in FIVES) # hello True
-print(guess_cap, guess_cap in FIVES) # HELLO False
-
-# places 'H' in the upper left
-gw.set_square_letter(0,0,guess_cap[0])</code></pre><hr>
-                            <p>While it differs from typical Python variable name conventions, it could be helpful to use variable names like:
-                            <hr><pre style="font-size:larger"><code >Guess = "Hello"
-guess = Guess.lower()
-GUESS = Guess.upper()</code></pre>
+                            <p> Be advised, words from <code>FIVES</code> and <code>SIXES</code> are all capitalized for your convenience, as all displayed letters in Mini are capitalized (upper-case).
                         </div>
                     </div>
                     <hr>
@@ -333,17 +296,17 @@ GUESS = Guess.upper()</code></pre>
                                 </ul>
                                 <li>else:
                                 <ul>
-                                    <li><code>gw.show_message("Honk honk, I am a silly goose.") # negation of your choice</code>
+                                    <li><code>gw.show_message("Silly goose!") # negation of your choice</code>
                                     <li>Set the color of every square in the color to "MISSING_COLOR".
                                 </ul>
                             </ul>
-                            <p>Once your "Wordle.py" can assess guessed words in this manner, begin Milestone 2.
+                            <p>Once your "Mini.py" can assess guessed words in this manner, begin Milestone 1.
                         </div>
                     </div>
                     <hr>
                     <div>
-                        <a id="hide6" href="#hide6" class="hide"><h3>2. Check Prefixes [Show]</h3></a>
-                        <a id="show6" href="#show6" class="show"><h3>2. Check Prefixes [Hide]</h3></a>
+                        <a id="hide6" href="#hide6" class="hide"><h3>1. Check Prefixes [Show]</h3></a>
+                        <a id="show6" href="#show6" class="show"><h3>1. Check Prefixes [Hide]</h3></a>
                         <div class="details">
                             <b>Milestone 2: 60 points</b>
                             <p><em>This task writes the next part of the <code>enter_action</code> function and optionally implements the <code>col_word</code>, <code>col_color</code> and <code>valid_prefix</code> functions.</em></p>
@@ -351,7 +314,7 @@ GUESS = Guess.upper()</code></pre>
                             <ul>
                                 <li>For each column:</li>
                                 <ul>
-                                    <li>Extract the one to five letters, reading horizontal downward along the column.</li>
+                                    <li>Extract the one letter for each completed row, reading horizontal downward along a column.</li>
                                     <li>Check to see if there is a word in <code>SIXES</code> which begins with these letters.</li>
                                     <ul>
                                         <li>If so, take no further action.</li>
@@ -370,8 +333,8 @@ GUESS = Guess.upper()</code></pre>
                     </div>
                     <hr>
                     <div>
-                        <a id="hide7" href="#hide7" class="hide"><h3>3. Finish Game [Show]</h3></a>
-                        <a id="show7" href="#show7" class="show"><h3>3. Finish Game [Hide]</h3></a>
+                        <a id="hide7" href="#hide7" class="hide"><h3>2. Finish Game [Show]</h3></a>
+                        <a id="show7" href="#show7" class="show"><h3>2. Finish Game [Hide]</h3></a>
                         <div class="details">
                             <b>Milestone 3: Up to 20 points extra credit</b>
                             <p><em>This tasks finishes <code>enter_action</code>.</em></p>
@@ -384,10 +347,10 @@ GUESS = Guess.upper()</code></pre>
                                 </ul>
                                 <li>Check each column for validity</li>
                                 <ul>
-                                    <li>If any column "word" is not a word in <code>SIXES</code>, color column in "MISSING_COLOR" and terminate the game with a loss a la Wordle.</li>
-                                    <li>You may optimal check every column, even after finding an incorrect column.</li>
+                                    <li>If any column "word" is not a word in <code>SIXES</code>, color said column in "MISSING_COLOR" and terminate the game with a loss a la Wordle.</li>
+                                    <li>You may optionally check every column, even after finding an incorrect column.</li>
                                 </ul>
-                                <li>Otherwise, color the full grid in "CORRECT_COLOR", show an appropriately complimentary message, and terminate the game with a win.</li>
+                                <li>Otherwise, color the full grid in "CORRECT_COLOR", show an appropriately complimentary message like "Big ups!", and terminate the game with a win.</li>
                             </ul>
                         </div>
                     </div>

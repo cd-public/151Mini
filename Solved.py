@@ -2,6 +2,7 @@
 from WordleGraphics import *
 
 # FIVES and SIXES are all 5-letter and 6-letter English words
+# They
 from english import FIVES, SIXES
 
 
@@ -24,6 +25,8 @@ def valid_prefix(prefix):
 def enter_action():
     row = gw.get_current_row()
     word = row_word(row) 
+    hapax = False
+    color = CORRECT_COLOR
     if not word in FIVES:
         row_color(row, MISSING_COLOR)
         return gw.show_message("Not a word")
@@ -33,7 +36,7 @@ def enter_action():
            if not col_word(col) in SIXES:
                col_color(col, MISSING_COLOR)
                win = False
-        gw.show_message("You win!") if win else gw.show_message("You lose!")
+        gw.show_message("Big ups!") if win else gw.show_message("Oof!")
     else:
         bad = False
         for col in range(N_COLS):
