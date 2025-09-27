@@ -72,13 +72,14 @@
 				<div style="height:.25in;"> <!-- Vertical space adjuster for box shadow --></div>
 				<div class="page_inner"><center>
 					<h1>Midterm 1: Mini</h1>
-                    <h3>90 minutes. Individual. Open note.</h3>
+                    <h3>60 minutes. Individual. Open note.</h3>
                     </center>
                     <hr>
                     <div>
                         <a id="hide1" href="#hide1" class="hide"><h3>A. Starting Template [Show]</h3></a>
                         <a id="show1" href="#show1" class="show"><h3>A. Starting Template [Hide]</h3></a>
                         <div class="details">
+                            <p><strong>Point totals are provided as expectations of effort. I intend to "curve" point totals to ensure a class average within 1% of the class average on homeworks: 87.6%, an A-.</strong>
                             <p>This midterm is composed of 3 milestones, each roughly equivalent to two questions on a practice midterm. Each of the problems works together to create one, single, more expansive assignment. Before getting the milestones, there are a few introductory remarks.
                             <p>Additionally, this project will involve working with <code>WordleGraphics.py</code>. You should already be familiar from Project 1: Wordle. For your reference, this project specification will specify how to interact with this file, but you may also consult your code from Project 1: Wordle.
                             <hr>
@@ -292,12 +293,12 @@ gw.add_enter_listener(enter_action)</code></pre><hr>
                                 <li>If the entered word is in <code>FIVES</code>, then:
                                 <ul>
                                     <li><code>gw.show_message("First try!") # affirmation of your choice</code>
-                                    <li>Set the color of every square in the color to "CORRECT_COLOR".
+                                    <li>Set the color of every square in the word to "CORRECT_COLOR".
                                 </ul>
                                 <li>else:
                                 <ul>
                                     <li><code>gw.show_message("Silly goose!") # negation of your choice</code>
-                                    <li>Set the color of every square in the color to "MISSING_COLOR".
+                                    <li>Set the color of every square in the word to "MISSING_COLOR".
                                 </ul>
                             </ul>
                             <p>Once your "Mini.py" can assess guessed words in this manner, begin Milestone 1.
@@ -308,7 +309,7 @@ gw.add_enter_listener(enter_action)</code></pre><hr>
                         <a id="hide6" href="#hide6" class="hide"><h3>1. Check Prefixes [Show]</h3></a>
                         <a id="show6" href="#show6" class="show"><h3>1. Check Prefixes [Hide]</h3></a>
                         <div class="details">
-                            <b>Milestone 2: 60 points</b>
+                            <b>Milestone 1: 60 points</b>
                             <p><em>This task writes the next part of the <code>enter_action</code> function and optionally implements the <code>col_word</code>, <code>col_color</code> and <code>valid_prefix</code> functions.</em></p>
                             <p>Once a guessed word is known to be within <code>FIVES</code>, it may still be an invalid guess if it causes there to be no valid six letter words that can form a column.</p>
                             <ul>
@@ -336,7 +337,7 @@ gw.add_enter_listener(enter_action)</code></pre><hr>
                         <a id="hide7" href="#hide7" class="hide"><h3>2. Finish Game [Show]</h3></a>
                         <a id="show7" href="#show7" class="show"><h3>2. Finish Game [Hide]</h3></a>
                         <div class="details">
-                            <b>Milestone 3: Up to 20 points extra credit</b>
+                            <b>Milestone 2: Up to 20 points extra credit</b>
                             <p><em>This tasks finishes <code>enter_action</code>.</em></p>
                             <p>Once guess handling is finalized, you may conclude the game in the manner of your choice. For 20 points extra credit, you can do what I did:
                             <p>When the current row is the final row:
